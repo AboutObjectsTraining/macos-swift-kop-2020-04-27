@@ -18,7 +18,7 @@ class Dog: Animal
     var barkText = "Woof, woof!"
     var name = ""
     var age: Int
-    var coatColor = UIColor.brown
+//    var coatColor = UIColor.brown
     
     // Designated initializer
     init(name: String = "", barkText: String = "Woof, Woof!", age: Int = 0) {

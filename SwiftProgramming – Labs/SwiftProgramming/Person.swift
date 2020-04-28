@@ -42,7 +42,7 @@ class Person
     
     // MARK: - Friendable properties
     var friendID = 0
-    var friends = [Friendable]()
+    var friends: [Friendable] = []
     
     // MARK: - Initializers
     init(firstName: String, lastName: String) {
@@ -86,6 +86,8 @@ extension Person: Friendable
         }
     }
     
+    /// Unfriends the provided friend
+    /// - Parameter oldFriend: friend to be unfriended
     func unfriend2(_ oldFriend: Friendable) {
         let index = friends.firstIndex { oldFriend.friendID == $0.friendID }
         

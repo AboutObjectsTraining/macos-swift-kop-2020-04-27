@@ -8,6 +8,10 @@ enum MathError: Error {
     case overflow
 }
 
+extension String: Error {
+    
+}
+
 extension Double
 {
     func divided(by denominator: Double) throws -> Double {
@@ -178,6 +182,7 @@ class MiscTests: XCTestCase
             return
         }
         print(yyy)
+        
     }
     
 //    func divided(numerator: Double, denominator: Double) throws -> Double {
@@ -186,6 +191,15 @@ class MiscTests: XCTestCase
 //        }
 //        return numerator / denominator
 //    }
+    
+    func testCatchAgain() {
+        do {
+            let value = try 12.divided(by: 0)
+            print(value)
+        } catch {
+            print(error)
+        }
+    }
     
     func testSquared() {
         if let s = squared(numericString: "12") {
@@ -402,7 +416,7 @@ class MiscTests: XCTestCase
         rover.name = "Rover"
         rover.barkText = "Bow, wow!"
         
-        print(rover.description())
+        print(rover.description)
         
         print("Address is \(Unmanaged.passUnretained(rover).toOpaque()) ")
         
@@ -433,7 +447,7 @@ class MiscTests: XCTestCase
         let contact = ContactInfo()
         
         // Calling method with trailing closure
-        let phonesMatchingAreaCodes = contact.phones() { key, value in
+        let phonesMatchingAreaCodes = contact.phones { _, value in
             value.hasPrefix("914")
         }
         print(phonesMatchingAreaCodes)
@@ -448,14 +462,14 @@ class MiscTests: XCTestCase
         
         
         let areaCode = "914"
-        
-        let phonesMatchingCapturedValue = contact.phones { key, value in
+                
+        let phonesMatchingCapturedValue = contact.phones { _, value in
             value.hasPrefix(areaCode)
         }
         
         print(phonesMatchingCapturedValue)
         // produces ["other:": "914-456-7890", "mobile": "914-789-1234"]
-        
+                
         let daytimePhonesWithCapturedValue = contact.phones { [unowned self] key, value in
             self.daytimeKeys.contains(key)
         }
