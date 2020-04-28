@@ -2,21 +2,12 @@
 // See LICENSE.txt for this example's licensing information.
 //
 
-// Implementation of Equatable protocol
-//
-//func ==(lhs: Friendable, rhs: Friendable) -> Bool {
-//    return lhs.friendID == rhs.friendID
-//}
 
-// MARK: - Likeable Protocol
-
-/// Provides methods and properties that determine likeability
+// MARK: - Likeable protocol
 protocol Likeable
 {
-    // MARK: Property Declaration
     var numberOfLikes: Int { get }
     
-    // MARK: Method Declarations
     func like()
     func unlike()
 }
@@ -27,54 +18,49 @@ extension Likeable {
     }
 }
 
-// MARK: - Friendable Protocol
+// MARK: - Friendable protocol
 protocol Friendable
 {
-    // MARK: Property Declarations
     var friendID: Int { get }
     var friends: [Friendable] { get }
     
-    // MARK: Method Declarations
     func friend(_ newFriend: Friendable)
     func unfriend(_ oldFriend: Friendable)
 }
 
-// MARK: - Person Class
-class Person: Likeable, Friendable, CustomDebugStringConvertible
+// MARK: - Person class
+class Person
 {
     var isCool: Bool { return true }
     
-    // MARK: Person Properties
+    // MARK: - Person properties
     var firstName: String
     var lastName: String
     
-    // MARK: Likeable Properties
+    // MARK: - Likeable properties
     var numberOfLikes = 0
     
-    // MARK: Friendable Properties
+    // MARK: - Friendable properties
     var friendID = 0
     var friends = [Friendable]()
-    
-    // MARK: CustomDebugStringConvertible Properties
-    var debugDescription: String {
-        return "\(firstName) \(lastName), +\(numberOfLikes)"
-    }
     
     // MARK: - Initializers
     init(firstName: String, lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
     }
-    
-    convenience init(_ firstName: String, _ lastName: String, _ friendID: Int) {
-        self.init(firstName: firstName, lastName: lastName)
-        self.friendID = friendID
+}
+
+// MARK: - CustomDebugStringConvertible conformance
+extension Person: CustomDebugStringConvertible
+{
+    var debugDescription: String {
+        return "\(firstName) \(lastName), +\(numberOfLikes)"
     }
 }
 
-
-// MARK: - Person's Likeable Methods
-extension Person
+// MARK: - Likeable methods
+extension Person: Likeable
 {
     func like() {
         numberOfLikes += 1
@@ -87,8 +73,8 @@ extension Person
     }
 }
 
-// MARK: - Person's Friendable Methods
-extension Person
+// MARK: - Friendable methods
+extension Person: Friendable
 {
     func friend(_ newFriend: Friendable) {
         friends.append(newFriend)
@@ -102,7 +88,7 @@ extension Person
     
     func unfriend2(_ oldFriend: Friendable) {
         let index = friends.firstIndex { oldFriend.friendID == $0.friendID }
-
+        
         if index == nil { return }
         friends.remove(at: index!)
     }
