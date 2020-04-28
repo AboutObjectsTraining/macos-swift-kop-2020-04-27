@@ -10,12 +10,11 @@ class Dog: Animal
 {
     var barkText = "Woof, woof!"
     var name: String = ""
-    
-    func bark() {
-        print(barkText)
-    }
-    
-    func description() -> String
+}
+
+extension Dog: CustomStringConvertible
+{
+    var description: String
     {
         return "name: \(name), is pet: "
             + (isPet ? "yes" : "no")
@@ -23,8 +22,11 @@ class Dog: Animal
     }
 }
 
-
 extension Dog
 {
     var numberOfLegs: Int { return 4 }
+    
+    func bark() {
+        print(barkText)
+    }
 }
