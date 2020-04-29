@@ -8,16 +8,21 @@ let address1 = Address(street: "12 Pine St.", city: "Reston", state: "VA")
 let address2 = Address(street: "3 Elm St.", street2: "Apt 2C", city: "Reston", state: "VA")
 
 
-var customers = [
+let customers = [
     Customer(name: "Sue Yu", address: nil),
     Customer(name: "Anna Graham", address: address2)
 ]
 
 class OptionalsLabTests: XCTestCase
 {
+    var foo = "Blah"
+    lazy var bar = foo
+    
     func testFullStreet() {
         print(address1.fullStreet)
         print(address2.fullStreet)
+        
+        print(bar)
     }
     
     func testInitializeCustomer() {
