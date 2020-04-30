@@ -13,6 +13,7 @@
 		B41D71022459E87C003F710F /* WindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D71012459E87C003F710F /* WindowDelegate.swift */; };
 		B41D71042459FFB8003F710F /* CoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D71032459FFB8003F710F /* CoolView.swift */; };
 		B41D7106245A1F13003F710F /* CoolViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D7105245A1F13003F710F /* CoolViewCell.swift */; };
+		B4A6EFB9245B278C007CFD37 /* CoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFB8245B278C007CFD37 /* CoolController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B41D71012459E87C003F710F /* WindowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowDelegate.swift; sourceTree = "<group>"; };
 		B41D71032459FFB8003F710F /* CoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolView.swift; sourceTree = "<group>"; };
 		B41D7105245A1F13003F710F /* CoolViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolViewCell.swift; sourceTree = "<group>"; };
+		B4A6EFB8245B278C007CFD37 /* CoolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				B41D71012459E87C003F710F /* WindowDelegate.swift */,
 				B41D71032459FFB8003F710F /* CoolView.swift */,
 				B41D7105245A1F13003F710F /* CoolViewCell.swift */,
+				B4A6EFB8245B278C007CFD37 /* CoolController.swift */,
 				B41D70F52459C5C1003F710F /* Assets.xcassets */,
 				B41D70F72459C5C1003F710F /* MainMenu.xib */,
 				B41D70FA2459C5C1003F710F /* Info.plist */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A6EFB9245B278C007CFD37 /* CoolController.swift in Sources */,
 				B41D71022459E87C003F710F /* WindowDelegate.swift in Sources */,
 				B41D7106245A1F13003F710F /* CoolViewCell.swift in Sources */,
 				B41D71042459FFB8003F710F /* CoolView.swift in Sources */,

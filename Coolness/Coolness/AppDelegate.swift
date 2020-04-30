@@ -33,14 +33,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         window.title = title
         window.setFrameAutosaveName(title)
-        window.isReleasedWhenClosed = false
-        
-        guard let contentSize = window.contentView?.frame.size else { return }
-        
-        let coolView = CoolView(frame: NSRect(origin: .zero, size: contentSize))
-//        coolView.autoresizingMask = [.width, .height]
-        window.contentView?.addSubview(coolView)
-        
+        window.isReleasedWhenClosed = false        
+        window.contentViewController = CoolController()
     }
 }
 

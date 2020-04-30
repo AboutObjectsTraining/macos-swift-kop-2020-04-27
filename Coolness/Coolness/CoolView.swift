@@ -24,17 +24,8 @@ class CoolView: NSView
         box.titlePosition = .noTitle
         addSubview(box)
         
-        // TODO: Add cells
-        
-        
-        let cell1 = CoolViewCell(frame: NSRect(x: 20, y: 80, width: 180, height: 40))
-        cell1.backgroundColor = NSColor.systemPurple
-        box.addSubview(cell1)
-        
-        let cell2 = CoolViewCell(frame: NSRect(x: 50, y: 150, width: 180, height: 40))
-        cell2.backgroundColor = NSColor.systemOrange
-        box.addSubview(cell2)
-        
+        addCell(text: "Hello World! 🌍🌎🌏", backgroundColor: NSColor.systemPurple, origin: NSPoint(x: 20, y: 80))
+        addCell(text: "Cool View Cells FTW! 🥂🍾", backgroundColor: NSColor.systemOrange, origin: NSPoint(x: 50, y: 150))
     }
     
     required init?(coder: NSCoder) {
@@ -43,3 +34,14 @@ class CoolView: NSView
     }
 }
 
+extension CoolView
+{
+    func addCell(text: String, backgroundColor: NSColor, origin: NSPoint) {
+        let newCell = CoolViewCell()
+        newCell.setFrameOrigin(origin)
+        newCell.setFrameSize(NSSize(width: 180, height: 40))
+        newCell.text = text
+        newCell.backgroundColor = backgroundColor
+        box.addSubview(newCell)
+    }
+}
