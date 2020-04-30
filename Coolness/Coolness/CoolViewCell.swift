@@ -61,6 +61,10 @@ extension CoolViewCell
 // MARK: - Responding to mouse events
 extension CoolViewCell
 {
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
+        return true
+    }
+    
     override func mouseDown(with event: NSEvent) {
         highlighted = true
         

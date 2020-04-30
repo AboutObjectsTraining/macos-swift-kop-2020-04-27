@@ -17,13 +17,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         configureMainWindow()
         configureInspectorPanel()
+        configureMenuItems()
+    }
+    
+    @objc func showMainWindow(sender: Any?) {
+        window.orderFront(sender)
+    }
+    @objc func showInspectorPanel(sender: Any?) {
+        inspectorPanel.orderFront(sender)
+    }
+    
+    private func configureMenuItems() {
+        guard let windowMenu = NSApp.windowsMenu else { return }
+        windowMenu.addItem(withTitle: "My Window",
+                           action: #selector(showMainWindow(sender:)),
+                           keyEquivalent: "1")
+        windowMenu.addItem(withTitle: "Inspector",
+                           action: #selector(showInspectorPanel(sender:)),
+                           keyEquivalent: "2")
+        
+        window.isExcludedFromWindowsMenu = true
     }
     
     private func configureMainWindow() {
         let rect = NSRect(x: 400, y: 400, width: 400, height: 400)
         
         window = NSWindow(contentRect: rect,
-                          styleMask: [.titled, .resizable, .miniaturizable],
+                          styleMask: [.titled, .resizable, .miniaturizable, .closable],
                           backing: .buffered,
                           defer: true)
         
@@ -31,6 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         defer {
             window.orderFront(nil)
+            window.makeKey()
         }
         
         guard let frame = NSScreen.main?.frame else { return }

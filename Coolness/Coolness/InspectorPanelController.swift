@@ -18,11 +18,9 @@ class InspectorPanelController: NSViewController
         textField.placeholderString = "Enter a label"
         view.addSubview(textField)
         
-        let addButton = NSButton(title: "Add Cell", target: self, action: #selector(addCell(_:)))
+        let addButton = NSButton(title: "Add Cell",
+                                 target: nil,
+                                 action: #selector(CoolController.addCell(_:)))
         view.addSubview(addButton)
-    }
-    
-    @objc func addCell(_ sender: Any?) {
-        print("In \(#function), sender is \(sender ?? "")")
     }
 }
