@@ -8,18 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B4A6EFD1245B723E007CFD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A6EFD0245B723E007CFD37 /* Assets.xcassets */; };
-		B4A6EFD4245B723E007CFD37 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4A6EFD2245B723E007CFD37 /* MainMenu.xib */; };
+		B4A6EFD4245B723E007CFD37 /* OldMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4A6EFD2245B723E007CFD37 /* OldMainMenu.xib */; };
 		B4A6EFF0245B7488007CFD37 /* InspectorPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFEA245B7488007CFD37 /* InspectorPanelController.swift */; };
 		B4A6EFF1245B7488007CFD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFEB245B7488007CFD37 /* AppDelegate.swift */; };
 		B4A6EFF2245B7488007CFD37 /* CoolViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFEC245B7488007CFD37 /* CoolViewCell.swift */; };
 		B4A6EFF3245B7488007CFD37 /* CoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFED245B7488007CFD37 /* CoolView.swift */; };
 		B4A6EFF5245B7800007CFD37 /* CoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFF4245B7800007CFD37 /* CoolController.swift */; };
+		B4FA494B245CA9D2005555D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4FA494A245CA9D2005555D2 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B4A6EFCB245B723C007CFD37 /* Coolness2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coolness2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A6EFD0245B723E007CFD37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B4A6EFD3245B723E007CFD37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B4A6EFD3245B723E007CFD37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OldMainMenu.xib; sourceTree = "<group>"; };
 		B4A6EFD5245B723E007CFD37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4A6EFD6245B723E007CFD37 /* Coolness2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coolness2.entitlements; sourceTree = "<group>"; };
 		B4A6EFEA245B7488007CFD37 /* InspectorPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectorPanelController.swift; sourceTree = "<group>"; };
@@ -27,6 +28,7 @@
 		B4A6EFEC245B7488007CFD37 /* CoolViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolViewCell.swift; sourceTree = "<group>"; };
 		B4A6EFED245B7488007CFD37 /* CoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolView.swift; sourceTree = "<group>"; };
 		B4A6EFF4245B7800007CFD37 /* CoolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolController.swift; sourceTree = "<group>"; };
+		B4FA494A245CA9D2005555D2 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,8 @@
 				B4A6EFEC245B7488007CFD37 /* CoolViewCell.swift */,
 				B4A6EFEA245B7488007CFD37 /* InspectorPanelController.swift */,
 				B4A6EFD0245B723E007CFD37 /* Assets.xcassets */,
-				B4A6EFD2245B723E007CFD37 /* MainMenu.xib */,
+				B4A6EFD2245B723E007CFD37 /* OldMainMenu.xib */,
+				B4FA494A245CA9D2005555D2 /* MainMenu.xib */,
 				B4A6EFD5245B723E007CFD37 /* Info.plist */,
 				B4A6EFD6245B723E007CFD37 /* Coolness2.entitlements */,
 			);
@@ -132,7 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A6EFD1245B723E007CFD37 /* Assets.xcassets in Resources */,
-				B4A6EFD4245B723E007CFD37 /* MainMenu.xib in Resources */,
+				B4A6EFD4245B723E007CFD37 /* OldMainMenu.xib in Resources */,
+				B4FA494B245CA9D2005555D2 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,12 +158,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B4A6EFD2245B723E007CFD37 /* MainMenu.xib */ = {
+		B4A6EFD2245B723E007CFD37 /* OldMainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B4A6EFD3245B723E007CFD37 /* Base */,
 			);
-			name = MainMenu.xib;
+			name = OldMainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
