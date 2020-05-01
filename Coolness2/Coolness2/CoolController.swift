@@ -5,14 +5,6 @@ import Cocoa
 
 class CoolController: NSViewController
 {
-    override func loadView() {
-        view = CoolView(frame: NSRect(x: 0, y: 0, width: 640, height: 480))
-    }
-    
-    override func mouseDown(with event: NSEvent) {
-        print("In \(CoolController.self) \(#function)")
-    }
-    
     var panelController: InspectorPanelController? {
         return (NSApp.delegate as? AppDelegate)?.inspectorPanel.contentViewController as? InspectorPanelController
     }

@@ -3,34 +3,14 @@
 
 import Cocoa
 
-private let inset: CGFloat = 15
-private let resizingMask: NSView.AutoresizingMask = [.width, .height]
-
-
 class CoolView: NSView
 {
-    var color: NSColor = NSColor.clear
-    var box: NSBox
-    
-    override init(frame frameRect: NSRect) {
-        box = NSBox()
-        super.init(frame: frameRect)
+    @IBOutlet var box: NSBox!
         
-        autoresizingMask = resizingMask
-        
-        box.setFrameSize(bounds.insetBy(dx: inset, dy: inset).size)
-        box.setFrameOrigin(NSPoint(x: inset, y: inset))
-        box.autoresizingMask = resizingMask
-        box.titlePosition = .noTitle
-        addSubview(box)
-        
+    override func awakeFromNib() {
+        super.awakeFromNib()
         addCell(text: "Hello World! 🌍🌎🌏", backgroundColor: NSColor.systemPurple, origin: NSPoint(x: 20, y: 80))
         addCell(text: "Cool View Cells FTW! 🥂🍾", backgroundColor: NSColor.systemOrange, origin: NSPoint(x: 50, y: 150))
-    }
-    
-    required init?(coder: NSCoder) {
-        // FIXME: Maybe don't throw?
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

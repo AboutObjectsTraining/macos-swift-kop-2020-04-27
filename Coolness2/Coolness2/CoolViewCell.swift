@@ -23,21 +23,20 @@ class CoolViewCell: NSView
         return [.font: NSFont.systemFont(ofSize: 20),
                 .foregroundColor: NSColor.white]
     }
+
     
     fileprivate func configureLayer() {
         wantsLayer = true
-        
         layer?.borderWidth = 3
         layer?.borderColor = NSColor.white.cgColor
         layer?.backgroundColor = backgroundColor.cgColor
         layer?.cornerRadius = 10
-        
-        autoresizingMask = [.maxXMargin, .minYMargin]
     }
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
-        configureLayer()
+        configureLayer()        
+        autoresizingMask = [.maxXMargin, .minYMargin]
     }
     
     required init?(coder: NSCoder) {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B4A6EFD1245B723E007CFD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A6EFD0245B723E007CFD37 /* Assets.xcassets */; };
 		B4A6EFD4245B723E007CFD37 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4A6EFD2245B723E007CFD37 /* MainMenu.xib */; };
-		B4A6EFEE245B7488007CFD37 /* WindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFE8245B7488007CFD37 /* WindowDelegate.swift */; };
 		B4A6EFF0245B7488007CFD37 /* InspectorPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFEA245B7488007CFD37 /* InspectorPanelController.swift */; };
 		B4A6EFF1245B7488007CFD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFEB245B7488007CFD37 /* AppDelegate.swift */; };
 		B4A6EFF2245B7488007CFD37 /* CoolViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6EFEC245B7488007CFD37 /* CoolViewCell.swift */; };
@@ -23,7 +22,6 @@
 		B4A6EFD3245B723E007CFD37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B4A6EFD5245B723E007CFD37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4A6EFD6245B723E007CFD37 /* Coolness2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coolness2.entitlements; sourceTree = "<group>"; };
-		B4A6EFE8245B7488007CFD37 /* WindowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowDelegate.swift; sourceTree = "<group>"; };
 		B4A6EFEA245B7488007CFD37 /* InspectorPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectorPanelController.swift; sourceTree = "<group>"; };
 		B4A6EFEB245B7488007CFD37 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4A6EFEC245B7488007CFD37 /* CoolViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolViewCell.swift; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 				B4A6EFED245B7488007CFD37 /* CoolView.swift */,
 				B4A6EFEC245B7488007CFD37 /* CoolViewCell.swift */,
 				B4A6EFEA245B7488007CFD37 /* InspectorPanelController.swift */,
-				B4A6EFE8245B7488007CFD37 /* WindowDelegate.swift */,
 				B4A6EFD0245B723E007CFD37 /* Assets.xcassets */,
 				B4A6EFD2245B723E007CFD37 /* MainMenu.xib */,
 				B4A6EFD5245B723E007CFD37 /* Info.plist */,
@@ -151,7 +148,6 @@
 				B4A6EFF3245B7488007CFD37 /* CoolView.swift in Sources */,
 				B4A6EFF0245B7488007CFD37 /* InspectorPanelController.swift in Sources */,
 				B4A6EFF2245B7488007CFD37 /* CoolViewCell.swift in Sources */,
-				B4A6EFEE245B7488007CFD37 /* WindowDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
