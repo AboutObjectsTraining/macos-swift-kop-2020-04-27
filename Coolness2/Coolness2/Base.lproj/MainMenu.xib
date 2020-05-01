@@ -15,6 +15,8 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Coolness2" customModuleProvider="target">
             <connections>
                 <outlet property="coolController" destination="BHc-KH-oct" id="6mG-SV-0l9"/>
+                <outlet property="inspectorPanel" destination="X1p-Nh-4yg" id="GSa-uh-XxR"/>
+                <outlet property="inspectorPanelController" destination="71H-jM-l1p" id="wy0-8e-g7h"/>
                 <outlet property="window" destination="tzY-tO-b0S" id="Ul1-bl-rHh"/>
             </connections>
         </customObject>
@@ -663,6 +665,16 @@
                                     <action selector="arrangeInFront:" target="-1" id="DRN-fu-gQh"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="My Window" keyEquivalent="1" id="09c-y4-C5v">
+                                <connections>
+                                    <action selector="showMainWindow:" target="Voe-Tx-rLC" id="MdK-c9-86u"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Inspector" keyEquivalent="2" id="xu6-eF-hni">
+                                <connections>
+                                    <action selector="showInspectorPanel:" target="Voe-Tx-rLC" id="FBC-mZ-c6U"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -703,14 +715,14 @@
                     <outlet property="box" destination="Oet-K6-I9y" id="9Kd-VG-TEP"/>
                 </connections>
             </view>
-            <point key="canvasLocation" x="-268" y="34"/>
+            <point key="canvasLocation" x="-268" y="111"/>
         </window>
         <window title="Inspector" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" frameAutosaveName="Inspector" animationBehavior="default" id="X1p-Nh-4yg" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" utility="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="2710" y="571" width="185" height="166"/>
             <rect key="screenRect" x="2560" y="480" width="1536" height="937"/>
-            <view key="contentView" id="m4i-H1-3aP">
+            <view key="contentView" id="m4i-H1-3aP" userLabel="Inspector View">
                 <rect key="frame" x="0.0" y="0.0" width="185" height="166"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -730,6 +742,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="addCell:" target="BHc-KH-oct" id="idy-Nr-jtS"/>
+                        </connections>
                     </button>
                     <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgP-3S-mz1">
                         <rect key="frame" x="20" y="59" width="64" height="33"/>
@@ -752,6 +767,12 @@
         <viewController id="BHc-KH-oct" customClass="CoolController" customModule="Coolness2" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="dba-Qj-4wM" id="COG-QK-CpB"/>
+            </connections>
+        </viewController>
+        <viewController id="71H-jM-l1p" customClass="InspectorPanelController" customModule="Coolness2" customModuleProvider="target">
+            <connections>
+                <outlet property="textField" destination="QVw-ja-u6W" id="a2l-go-oAV"/>
+                <outlet property="view" destination="m4i-H1-3aP" id="a8s-FT-vAR"/>
             </connections>
         </viewController>
     </objects>
