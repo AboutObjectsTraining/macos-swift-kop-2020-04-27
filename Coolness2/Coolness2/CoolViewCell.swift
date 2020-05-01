@@ -8,11 +8,11 @@ private let textInsets = NSEdgeInsets(top: 7, left: 12, bottom: 8, right: 12)
 @IBDesignable
 class CoolViewCell: NSView
 {
-    var text: String? {
+    @IBInspectable var text: String? {
         didSet { resize() }
     }
     
-    var backgroundColor: NSColor = NSColor.gray {
+    @IBInspectable var backgroundColor: NSColor = NSColor.blue {
         didSet { layer?.backgroundColor = self.backgroundColor.cgColor }
     }
     var highlighted = false {
@@ -31,6 +31,11 @@ class CoolViewCell: NSView
         layer?.borderColor = NSColor.white.cgColor
         layer?.backgroundColor = backgroundColor.cgColor
         layer?.cornerRadius = 10
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        configureLayer()
     }
     
     override init(frame frameRect: NSRect) {

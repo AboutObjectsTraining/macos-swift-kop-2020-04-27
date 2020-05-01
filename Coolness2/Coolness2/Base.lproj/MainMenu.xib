@@ -708,6 +708,18 @@
                         <view key="contentView" id="qoz-k6-QN1">
                             <rect key="frame" x="3" y="3" width="440" height="216"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2AH-Ea-jqQ" customClass="CoolViewCell" customModule="Coolness2" customModuleProvider="target">
+                                    <rect key="frame" x="194" y="32" width="226" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                            <color key="value" name="systemIndigoColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="Wow, this is awesome! ⭐️😎💥"/>
+                                    </userDefinedRuntimeAttributes>
+                                </customView>
+                            </subviews>
                         </view>
                     </box>
                 </subviews>
@@ -715,7 +727,7 @@
                     <outlet property="box" destination="Oet-K6-I9y" id="9Kd-VG-TEP"/>
                 </connections>
             </view>
-            <point key="canvasLocation" x="-268" y="111"/>
+            <point key="canvasLocation" x="-268" y="68"/>
         </window>
         <window title="Inspector" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" frameAutosaveName="Inspector" animationBehavior="default" id="X1p-Nh-4yg" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" utility="YES" texturedBackground="YES"/>
@@ -771,6 +783,7 @@
         </viewController>
         <viewController id="71H-jM-l1p" customClass="InspectorPanelController" customModule="Coolness2" customModuleProvider="target">
             <connections>
+                <outlet property="colorWell" destination="jgP-3S-mz1" id="q13-JY-2hk"/>
                 <outlet property="textField" destination="QVw-ja-u6W" id="a2l-go-oAV"/>
                 <outlet property="view" destination="m4i-H1-3aP" id="a8s-FT-vAR"/>
             </connections>

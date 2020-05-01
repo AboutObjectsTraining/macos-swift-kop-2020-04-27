@@ -10,10 +10,9 @@ class CoolController: NSViewController
     }
     
     @IBAction func addCell(_ sender: Any?) {
-        print("In \(#function), sender is \(sender ?? "")")
-        guard let coolView = view as? CoolView,
-            let panelController = panelController else { return }
-        
-        coolView.addCell(text: panelController.textField.stringValue, backgroundColor: NSColor.blue, origin: .zero)
+        guard let coolView = view as? CoolView, let panelController = panelController else { return }
+        coolView.addCell(text: panelController.textField.stringValue,
+                         backgroundColor: panelController.colorWell.color,
+                         origin: .zero)
     }
 }
