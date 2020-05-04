@@ -5,10 +5,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="V3q-7K-mUh" id="I3g-pa-eeU"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="V3q-7K-mUh" customClass="AppDelegate" customModule="Coolness2" customModuleProvider="target">
+            <connections>
+                <outlet property="coolController" destination="ciP-WG-Iof" id="JW5-yZ-ypu"/>
+                <outlet property="inspectorPanel" destination="Nmg-pl-2Pw" id="sPt-xk-PVq"/>
+                <outlet property="inspectorPanelController" destination="HUX-kG-CVn" id="XfB-hd-JAS"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="r0k-Vi-mTI"/>
+            </connections>
+        </customObject>
+        <customObject id="ciP-WG-Iof" customClass="CoolController" customModule="Coolness2" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="se5-gp-TjO" id="CaB-tJ-Ja2"/>
+            </connections>
+        </customObject>
+        <customObject id="HUX-kG-CVn" customClass="InspectorPanelController" customModule="Coolness2" customModuleProvider="target">
+            <connections>
+                <outlet property="colorWell" destination="dHX-Cr-3sA" id="vBf-bU-VYO"/>
+                <outlet property="textField" destination="7Mj-TM-8ru" id="6Ro-db-Y6g"/>
+                <outlet property="view" destination="jTd-1P-bqk" id="7pg-le-oRg"/>
+            </connections>
+        </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="Coolness2" id="1Xt-HY-uBw">
@@ -653,8 +677,16 @@
                                     <action selector="arrangeInFront:" target="-1" id="DRN-fu-gQh"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="My Window" keyEquivalent="1" id="PgB-hq-h5P"/>
-                            <menuItem title="Inspector" keyEquivalent="2" id="ox9-rN-Z2Q"/>
+                            <menuItem title="My Window" keyEquivalent="1" id="PgB-hq-h5P">
+                                <connections>
+                                    <action selector="showMainWindow:" target="V3q-7K-mUh" id="ycd-t6-FqR"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Inspector" keyEquivalent="2" id="ox9-rN-Z2Q">
+                                <connections>
+                                    <action selector="showInspectorPanel:" target="V3q-7K-mUh" id="u1j-a9-A21"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -678,9 +710,44 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO" customClass="CoolView" customModule="Coolness2" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="tJ2-jM-svH">
+                        <rect key="frame" x="17" y="16" width="446" height="236"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <view key="contentView" id="b3S-qE-RCG">
+                            <rect key="frame" x="3" y="3" width="440" height="230"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ELr-6j-e2a" customClass="CoolViewCell" customModule="Coolness2" customModuleProvider="target">
+                                    <rect key="frame" x="40" y="171" width="214" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="Hello World! 🌏🌎🌍"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                            <color key="value" name="systemPurpleColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </customView>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTA-RS-8DS" customClass="CoolViewCell" customModule="Coolness2" customModuleProvider="target">
+                                    <rect key="frame" x="113" y="105" width="214" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="Woohoo!!! 💥🎉🍺"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                            <color key="value" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </customView>
+                            </subviews>
+                        </view>
+                    </box>
+                </subviews>
+                <connections>
+                    <outlet property="box" destination="tJ2-jM-svH" id="XnO-wX-ZbK"/>
+                </connections>
             </view>
             <point key="canvasLocation" x="5" y="140"/>
         </window>
@@ -692,6 +759,42 @@
             <view key="contentView" id="jTd-1P-bqk">
                 <rect key="frame" x="0.0" y="0.0" width="254" height="142"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vda-1m-QBX">
+                        <rect key="frame" x="18" y="101" width="218" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="Cell Text Message" id="XBu-hw-pnh">
+                            <font key="font" metaFont="message" size="11"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Mj-TM-8ru">
+                        <rect key="frame" x="20" y="82" width="214" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Enter some text" drawsBackground="YES" id="Ixl-yW-13h">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHX-Cr-3sA">
+                        <rect key="frame" x="22" y="42" width="116" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </colorWell>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jGC-05-4I7">
+                        <rect key="frame" x="154" y="7" width="91" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Add Cell" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hoU-wS-CCY">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="addCell:" target="ciP-WG-Iof" id="Sc1-ed-R72"/>
+                        </connections>
+                    </button>
+                </subviews>
             </view>
             <point key="canvasLocation" x="437" y="76"/>
         </window>

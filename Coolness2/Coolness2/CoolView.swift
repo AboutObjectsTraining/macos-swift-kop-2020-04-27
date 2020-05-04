@@ -6,12 +6,6 @@ import Cocoa
 class CoolView: NSView
 {
     @IBOutlet var box: NSBox!
-        
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        addCell(text: "Hello World! 🌍🌎🌏", backgroundColor: NSColor.systemPurple, origin: NSPoint(x: 20, y: 80))
-        addCell(text: "Cool View Cells FTW! 🥂🍾", backgroundColor: NSColor.systemOrange, origin: NSPoint(x: 50, y: 150))
-    }
 }
 
 extension CoolView
